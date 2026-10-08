@@ -1,0 +1,1490 @@
+'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>House of Sausage'x | Premium Meat Purveyors - Kathmandu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --primary-black: #000000;
+            --secondary-black: #1a1a1a;
+            --dark-gray: #2d2d2d;
+            --medium-gray: #666666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --accent-red: #c41e3a;
+            --gold: #d4af37;
+            --whatsapp-green: #25D366;
+            --apple-blue: #0071e3;
+            --apple-gray: #86868b;
+            --apple-light: #f5f5f7;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--primary-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation - Apple Style */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            z-index: 1000;
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-red);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-black);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+            opacity: 0.8;
+        }
+
+        nav a:hover {
+            opacity: 1;
+            color: var(--accent-red);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .btn-outline {
+            padding: 0.5rem 1.2rem;
+            border: 1.5px solid var(--primary-black);
+            background: transparent;
+            color: var(--primary-black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 980px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-black);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            padding: 0.5rem 1.2rem;
+            background: var(--accent-red);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 980px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            height: 85vh;
+            min-height: 600px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-large {
+            padding: 0.9rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border-radius: 980px;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary-black);
+        }
+
+        .btn-white:hover {
+            transform: scale(1.02);
+        }
+
+        .btn-transparent {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-transparent:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--apple-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* Dual Service Section */
+        .dual-service {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 550px;
+        }
+
+        .service-panel {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 3rem 2rem;
+        }
+
+        .service-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 1;
+        }
+
+        .service-panel img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 2;
+            max-width: 450px;
+        }
+
+        .service-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .service-content p {
+            font-size: 1.05rem;
+            margin-bottom: 1.8rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Products Grid */
+        .products-section {
+            background: var(--apple-light);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 1.8rem;
+        }
+
+        .product-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .product-info p {
+            color: var(--apple-gray);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.3rem;
+        }
+
+        .product-list li {
+            padding: 0.45rem 0;
+            border-bottom: 0.5px solid #e5e5e5;
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .product-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Order Button - Apple Style */
+        .order-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--whatsapp-green);
+            color: white;
+            padding: 0.85rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 980px;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.2);
+        }
+
+        .order-btn:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .order-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--primary-black);
+            color: var(--white);
+        }
+
+        .features .section-header h2 {
+            color: var(--white);
+        }
+
+        .features .section-header p {
+            color: var(--apple-gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            color: var(--apple-gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Process Section */
+        .process {
+            background: var(--white);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-red);
+            opacity: 0.15;
+            margin-bottom: 1rem;
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .step p {
+            color: var(--apple-gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--apple-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.8rem;
+            font-weight: 600;
+        }
+
+        .contact-detail {
+            margin-bottom: 1.8rem;
+        }
+
+        .contact-detail h4 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: var(--accent-red);
+        }
+
+        .contact-detail p {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+
+        .whatsapp-cta {
+            display: inline-block;
+            background: var(--whatsapp-green);
+            color: white;
+            padding: 0.9rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 980px;
+            margin-top: 0.8rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-cta:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 3.5rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            color: var(--apple-gray);
+            text-decoration: none;
+            line-height: 1.9;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 0.5px solid #333;
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* ============================================
+           MOBILE OPTIMIZATION - APPLE STYLE
+           ============================================ */
+        
+        @media (max-width: 968px) {
+            .nav-container {
+                padding: 0.7rem 1.2rem;
+            }
+
+            nav ul {
+                gap: 1.2rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                height: 75vh;
+                min-height: 500px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .dual-service {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .service-panel {
+                min-height: 400px;
+                padding: 2.5rem 1.5rem;
+            }
+
+            .service-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Mobile Navigation - Compact */
+            header {
+                position: sticky;
+            }
+
+            .nav-container {
+                padding: 0.6rem 1rem;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+                order: 1;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                padding: 0.3rem 0;
+            }
+
+            .nav-buttons {
+                order: 2;
+                gap: 0.5rem;
+            }
+
+            .btn-outline, .btn-primary {
+                padding: 0.45rem 1rem;
+                font-size: 0.75rem;
+            }
+
+            /* Hero - Mobile Optimized */
+            .hero {
+                margin-top: 100px;
+                height: 70vh;
+                min-height: 450px;
+            }
+
+            .hero-content {
+                padding: 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.8rem;
+                width: 100%;
+            }
+
+            .btn-large {
+                width: 100%;
+                padding: 0.85rem 1.5rem;
+                font-size: 0.95rem;
+                text-align: center;
+            }
+
+            /* Sections - Better Spacing */
+            section {
+                padding: 3.5rem 1.2rem;
+            }
+
+            .section-header {
+                margin-bottom: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.9rem;
+                line-height: 1.25;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+                padding: 0 0.5rem;
+            }
+
+            /* Service Panels */
+            .service-panel {
+                min-height: 350px;
+                padding: 2rem 1.2rem;
+            }
+
+            .service-content h3 {
+                font-size: 1.6rem;
+            }
+
+            .service-content p {
+                font-size: 0.95rem;
+            }
+
+            /* Products Grid - Single Column on Small Screens */
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .product-card {
+                border-radius: 16px;
+            }
+
+            .product-image {
+                height: 220px;
+            }
+
+            .product-info {
+                padding: 1.5rem;
+            }
+
+            .product-info h3 {
+                font-size: 1.4rem;
+            }
+
+            /* Features - Better Layout */
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-item {
+                padding: 1.5rem 1rem;
+            }
+
+            .feature-icon {
+                font-size: 2.2rem;
+            }
+
+            .feature-item h3 {
+                font-size: 1.05rem;
+            }
+
+            .feature-item p {
+                font-size: 0.85rem;
+            }
+
+            /* Process Steps */
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .step {
+                padding: 1.5rem 1rem;
+            }
+
+            .step-number {
+                font-size: 3rem;
+            }
+
+            /* Contact - Stacked */
+            .contact-grid {
+                gap: 2rem;
+            }
+
+            .contact-info h3 {
+                font-size: 1.6rem;
+            }
+
+            .whatsapp-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Footer */
+            footer {
+                padding: 2.5rem 1.2rem 1.2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .footer-section h4 {
+                font-size: 0.95rem;
+            }
+
+            .footer-section p, .footer-section a {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Extra Small Devices */
+            .nav-container {
+                padding: 0.5rem 0.8rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 0.8rem;
+            }
+
+            nav a {
+                font-size: 0.75rem;
+            }
+
+            .btn-outline, .btn-primary {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.7rem;
+            }
+
+            .hero {
+                margin-top: 95px;
+                height: 65vh;
+                min-height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.7rem;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Touch Optimization */
+        @media (hover: none) and (pointer: coarse) {
+            .product-card:hover {
+                transform: none;
+            }
+
+            .btn-large:hover,
+            .order-btn:hover,
+            .whatsapp-cta:hover {
+                transform: none;
+            }
+
+            nav a:hover {
+                opacity: 1;
+            }
+        }
+
+        /* Smooth Scrolling for iOS */
+        @supports (-webkit-overflow-scrolling: touch) {
+            body {
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">House of <span>Sausage'x</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-buttons">
+                <a href="https://wa.me/9779808261761" class="btn-outline">WhatsApp</a>
+                <a href="#contact" class="btn-primary">Order Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with VIDEO Background -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="images/hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Premium Quality Meats for Chefs & Homes</h1>
+            <p>Kathmandu's Trusted Meat Purveyor | B2B & B2C | Custom Cuts</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn-large btn-white">Explore Products</a>
+                <a href="https://wa.me/9779808261761" class="btn-large btn-transparent">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual Service Section -->
+    <section class="dual-service" id="services">
+        <div class="service-panel">
+            <img src="images/food-service.jpg" alt="Restaurant Supply">
+            <div class="service-content">
+                <h3>Food Service</h3>
+                <p>Premium wholesale meats for restaurants, hotels, and commercial kitchens in Kathmandu. Reliable supply, consistent quality, competitive pricing.</p>
+                <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20your%20B2B%20Food%20Service.%20Please%20share%20details." class="btn-large btn-white">Become a Customer</a>
+            </div>
+        </div>
+        <div class="service-panel">
+            <img src="images/home-delivery.jpg" alt="Home Delivery">
+            <div class="service-content">
+                <h3>Home Delivery</h3>
+                <p>Kathmandu's finest meats delivered to your door. Fresh cuts, specialty items, and artisanal deli products for home cooking.</p>
+                <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20Home%20Delivery.%20Please%20share%20available%20products." class="btn-large btn-white">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Family Butchery. Built Around Your Kitchen.</h2>
+                <p>A proud venture under Mithu Kitchen Pvt. Ltd., serving Kathmandu with premium quality meats since day one.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PRODUCTS Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Products</h2>
+                <p>From prime cuts to artisanal deli meats, we offer the finest selection in Kathmandu</p>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Mutton -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/mutton.jpg" alt="Mutton">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mutton Specialties</h3>
+                        <p>Our signature category - Kathmandu's finest mutton</p>
+                        <ul class="product-list">
+                            <li>Prime Cuts & Boneless</li>
+                            <li>Ribs, Neck Chops & Shanks</li>
+                            <li>Chops & Curry Cuts</li>
+                            <li>Custom Cutting Available</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Mutton.%20Please%20share%20available%20cuts%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Mutton
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Buffalo -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/buffalo.jpg" alt="Buffalo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Buffalo (Buff)</h3>
+                        <p>Premium quality buffalo meat, not beef</p>
+                        <ul class="product-list">
+                            <li>Cowboy Steak & T-Bone</li>
+                            <li>Round Meats & Ground</li>
+                            <li>Tenders & Custom Cuts</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Buffalo%20(Buff)%20meat.%20Please%20share%20available%20cuts%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Buffalo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Chicken -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/chicken.jpg" alt="Chicken">
+                    </div>
+                    <div class="product-info">
+                        <h3>Chicken & Poultry</h3>
+                        <p>Fresh chicken parts and specialty items</p>
+                        <ul class="product-list">
+                            <li>Breast, Smoked Breast</li>
+                            <li>Thighs, Legs & Wings</li>
+                            <li>Stuffed Chicken</li>
+                            <li>Country Chicken</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Chicken.%20Please%20share%20available%20parts%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Chicken
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pork -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/pork.jpg" alt="Pork">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pork Selection</h3>
+                        <p>Quality pork and cured products</p>
+                        <ul class="product-list">
+                            <li>Pork Belly</li>
+                            <li>Smoked & Cured Hams</li>
+                            <li>Fresh Pork Cuts</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Pork.%20Please%20share%20available%20cuts%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Pork
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Duck & Turkey -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/duck-turkey.jpg" alt="Duck">
+                    </div>
+                    <div class="product-info">
+                        <h3>Duck & Turkey</h3>
+                        <p>Premium duck and turkey meat</p>
+                        <ul class="product-list">
+                            <li>Fresh Duck</li>
+                            <li>Turkey</li>
+                            <li>Whole Birds & Custom Cuts</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Duck%20or%20Turkey.%20Please%20share%20availability%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Duck/Turkey
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Skewers -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/skewers.jpg" alt="Skewers">
+                    </div>
+                    <div class="product-info">
+                        <h3>Skewers & Ready-to-Cook</h3>
+                        <p>Perfectly prepared for grilling</p>
+                        <ul class="product-list">
+                            <li>Mixed Meat Skewers</li>
+                            <li>Chicken & Buff Skewers</li>
+                            <li>Marinated Options</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Skewers.%20Please%20share%20available%20options%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Skewers
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAUSAGES Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>House-Made Sausages</h2>
+                <p>Freshly crafted sausages in variety of flavors</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/chicken-sausage.jpg" alt="Chicken Sausage">
+                    </div>
+                    <div class="product-info">
+                        <h3>Chicken Sausages</h3>
+                        <p>Premium quality chicken sausages</p>
+                        <ul class="product-list">
+                            <li>Classic Chicken</li>
+                            <li>Spicy Chicken</li>
+                            <li>Herb & Garlic</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Chicken%20Sausages.%20Please%20share%20flavors%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Chicken Sausage
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/buff-sausage.jpg" alt="Buff Sausage">
+                    </div>
+                    <div class="product-info">
+                        <h3>Buff Sausages</h3>
+                        <p>Rich and flavorful buffalo sausages</p>
+                        <ul class="product-list">
+                            <li>Classic Buff</li>
+                            <li>Spicy Buff</li>
+                            <li>Smoked Buff</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Buff%20Sausages.%20Please%20share%20flavors%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Buff Sausage
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/pork-sausage.jpg" alt="Pork Sausage">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pork Sausages</h3>
+                        <p>Traditional pork sausages</p>
+                        <ul class="product-list">
+                            <li>Classic Pork</li>
+                            <li>Italian Style</li>
+                            <li>Bratwurst</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Pork%20Sausages.%20Please%20share%20flavors%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Pork Sausage
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DELI & READY-TO-COOK Section -->
+    <section style="background: var(--apple-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Deli & Ready-to-Cook</h2>
+                <p>Convenient options for your kitchen</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/burger-patty.jpg" alt="Burger Patty">
+                    </div>
+                    <div class="product-info">
+                        <h3>Burger Patties</h3>
+                        <p>Premium handcrafted burger patties</p>
+                        <ul class="product-list">
+                            <li>Buff Burger Patty</li>
+                            <li>Chicken Burger Patty</li>
+                            <li>Half-Done Fried Patty</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Burger%20Patties.%20Please%20share%20options%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Burger Patties
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/trout-fish.jpg" alt="Trout Fish">
+                    </div>
+                    <div class="product-info">
+                        <h3>Trout Fish & Fillets</h3>
+                        <p>Fresh trout fish and premium fillets</p>
+                        <ul class="product-list">
+                            <li>Whole Trout</li>
+                            <li>Trout Fillets</li>
+                            <li>Cleaned & Ready</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Trout%20Fish/Fillets.%20Please%20share%20availability%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Trout Fish
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/pepperoni.jpg" alt="Pepperoni">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pepperoni & Pizza Toppings</h3>
+                        <p>Kathmandu's best pizza essentials</p>
+                        <ul class="product-list">
+                            <li>Premium Pepperoni</li>
+                            <li>Pizza Toppings</li>
+                            <li>Italian Sausage</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Pepperoni%20%26%20Pizza%20Toppings.%20Please%20share%20options%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Pepperoni
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURED MEATS Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Cured & Deli Meats</h2>
+                <p>Artisanal cured specialties</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/cured-meats.jpg" alt="Cured Meats">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cured & Smoked</h3>
+                        <p>Artisanal cured specialties</p>
+                        <ul class="product-list">
+                            <li>Cured Salami</li>
+                            <li>Smoked Meats</li>
+                            <li>Hams & Mortadella</li>
+                        </ul>
+                        <a href="https://wa.me/9779808261761?text=Hi!%20I'm%20interested%20in%20ordering%20Cured%20%26%20Smoked%20Meats.%20Please%20share%20available%20options%20and%20prices." class="order-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Order Cured Meats
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose House of Sausage'x?</h2>
+                <p>Trusted by restaurants and homes across Kathmandu</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Mutton Specialists</h3>
+                    <p>Known for offering the finest quality mutton in Kathmandu with expert cuts</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✂️</div>
+                    <h3>Custom Cuts</h3>
+                    <p>Personalized cutting services tailored to your specific requirements</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✅</div>
+                    <h3>Quality Assured</h3>
+                    <p>Every product undergoes strict quality checks for freshness and standards</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Reliable Delivery</h3>
+                    <p>Consistent supply for businesses and convenient delivery for homes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>How to Order</h2>
+                <p>Simple process for both retail and wholesale customers</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Contact Us</h3>
+                    <p>Reach out via WhatsApp or visit our location in Kathmandu. Tell us about your needs - whether you're a restaurant or home customer.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Choose Products</h3>
+                    <p>Browse our product range or request custom cuts. We'll help you select the perfect meats for your menu or kitchen.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Receive Delivery</h3>
+                    <p>We arrange delivery at your convenience. Fresh, quality-assured meats delivered to your doorstep or business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-detail">
+                        <h4>Company</h4>
+                        <p><strong>House of Sausage'x</strong><br>
+                        A division of Mithu Kitchen Pvt. Ltd.</p>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <h4>Location</h4>
+                        <p>Kathmandu, Nepal</p>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <h4>WhatsApp</h4>
+                        <p>+977 9808261761</p>
+                        <a href="https://wa.me/9779808261761" class="whatsapp-cta">Chat on WhatsApp</a>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <h4>Business Hours</h4>
+                        <p>Monday - Saturday: 7:00 AM - 8:00 PM<br>
+                        Sunday: 8:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Quick Order</h3>
+                    <p style="margin-bottom: 2rem; line-height: 1.8;">Send us your requirements via WhatsApp for quick response. We accept both retail and wholesale orders with flexible payment options.</p>
+                    
+                    <div class="contact-detail">
+                        <h4>For Restaurants & Hotels</h4>
+                        <p>We provide reliable B2B supply with competitive pricing, consistent quality, and flexible delivery schedules. Contact us to set up your account.</p>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <h4>For Home Customers</h4>
+                        <p>Premium quality meats for your family. From everyday cuts to special occasion specialties, we deliver freshness to your door.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>House of Sausage'x</h4>
+                <p>A Mithu Kitchen Pvt. Ltd. Venture</p>
+                <p>Kathmandu, Nepal</p>
+                <p>Premium Meat Purveyors</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="#products">Products</a></p>
+                <p><a href="#services">Services</a></p>
+                <p><a href="#about">About Us</a></p>
+                <p><a href="#contact">Contact</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Products</h4>
+                <p><a href="#products">Mutton</a></p>
+                <p><a href="#products">Buffalo</a></p>
+                <p><a href="#products">Chicken</a></p>
+                <p><a href="#products">Sausages</a></p>
+                <p><a href="#products">Deli Meats</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>WhatsApp: +977 9808261761</p>
+                <p>Kathmandu, Nepal</p>
+                <p>Mon-Sat: 7AM - 8PM</p>
+                <p>Sun: 8AM - 6PM</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 House of Sausage'x | Mithu Kitchen Pvt. Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>'''
