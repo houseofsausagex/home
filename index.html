@@ -1,4 +1,4 @@
-'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,6 +26,10 @@
             --apple-blue: #0071e3;
             --apple-gray: #86868b;
             --apple-light: #f5f5f7;
+            --instagram-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            --tiktok-black: #000000;
+            --tiktok-cyan: #69C9D0;
+            --tiktok-magenta: #EE1D52;
         }
 
         html {
@@ -294,6 +298,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             z-index: 0;
         }
 
@@ -345,13 +350,17 @@
         .product-image {
             height: 260px;
             overflow: hidden;
+            position: relative;
+            background-color: #eee;
         }
 
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center center;
             transition: transform 0.5s ease;
+            display: block;
         }
 
         .product-card:hover .product-image img {
@@ -588,6 +597,52 @@
 
         .footer-section a:hover {
             color: var(--white);
+        }
+
+        /* Social Icons Styling */
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+            transition: fill 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Instagram Hover Effect */
+        .social-icon.instagram:hover svg {
+            fill: #E1306C; /* Fallback */
+            background: var(--instagram-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* TikTok Hover Effect */
+        .social-icon.tiktok:hover {
+            background: var(--white);
+        }
+        .social-icon.tiktok:hover svg {
+            fill: var(--primary-black);
         }
 
         .footer-bottom {
@@ -855,6 +910,10 @@
             .footer-section p, .footer-section a {
                 font-size: 0.85rem;
             }
+            
+            .social-icons {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -963,7 +1022,7 @@
 
     <!-- Hero Section with VIDEO Background -->
     <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
+        <video class="hero-video" autoplay muted loop playsinline poster="images/hero-poster.jpg">
             <source src="images/hero-bg.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -980,7 +1039,7 @@
     <!-- Dual Service Section -->
     <section class="dual-service" id="services">
         <div class="service-panel">
-            <img src="images/food-service.jpg" alt="Restaurant Supply">
+            <img src="images/food-service.jpg" alt="Restaurant Supply" width="1200" height="800">
             <div class="service-content">
                 <h3>Food Service</h3>
                 <p>Premium wholesale meats for restaurants, hotels, and commercial kitchens in Kathmandu. Reliable supply, consistent quality, competitive pricing.</p>
@@ -988,7 +1047,7 @@
             </div>
         </div>
         <div class="service-panel">
-            <img src="images/home-delivery.jpg" alt="Home Delivery">
+            <img src="images/home-delivery.jpg" alt="Home Delivery" width="1200" height="800">
             <div class="service-content">
                 <h3>Home Delivery</h3>
                 <p>Kathmandu's finest meats delivered to your door. Fresh cuts, specialty items, and artisanal deli products for home cooking.</p>
@@ -1019,7 +1078,7 @@
                 <!-- Mutton -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/mutton.jpg" alt="Mutton">
+                        <img src="images/mutton.jpg" alt="Mutton" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Mutton Specialties</h3>
@@ -1040,7 +1099,7 @@
                 <!-- Buffalo -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/buffalo.jpg" alt="Buffalo">
+                        <img src="images/buffalo.jpg" alt="Buffalo" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Buffalo (Buff)</h3>
@@ -1060,7 +1119,7 @@
                 <!-- Chicken -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/chicken.jpg" alt="Chicken">
+                        <img src="images/chicken.jpg" alt="Chicken" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Chicken & Poultry</h3>
@@ -1081,7 +1140,7 @@
                 <!-- Pork -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/pork.jpg" alt="Pork">
+                        <img src="images/pork.jpg" alt="Pork" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Pork Selection</h3>
@@ -1101,7 +1160,7 @@
                 <!-- Duck & Turkey -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/duck-turkey.jpg" alt="Duck">
+                        <img src="images/duck-turkey.jpg" alt="Duck" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Duck & Turkey</h3>
@@ -1121,7 +1180,7 @@
                 <!-- Skewers -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/skewers.jpg" alt="Skewers">
+                        <img src="images/skewers.jpg" alt="Skewers" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Skewers & Ready-to-Cook</h3>
@@ -1152,7 +1211,7 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/chicken-sausage.jpg" alt="Chicken Sausage">
+                        <img src="images/chicken-sausage.jpg" alt="Chicken Sausage" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Chicken Sausages</h3>
@@ -1171,7 +1230,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/buff-sausage.jpg" alt="Buff Sausage">
+                        <img src="images/buff-sausage.jpg" alt="Buff Sausage" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Buff Sausages</h3>
@@ -1190,7 +1249,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/pork-sausage.jpg" alt="Pork Sausage">
+                        <img src="images/pork-sausage.jpg" alt="Pork Sausage" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Pork Sausages</h3>
@@ -1221,7 +1280,7 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/burger-patty.jpg" alt="Burger Patty">
+                        <img src="images/burger-patty.jpg" alt="Burger Patty" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Burger Patties</h3>
@@ -1240,7 +1299,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/trout-fish.jpg" alt="Trout Fish">
+                        <img src="images/trout-fish.jpg" alt="Trout Fish" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Trout Fish & Fillets</h3>
@@ -1259,7 +1318,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/pepperoni.jpg" alt="Pepperoni">
+                        <img src="images/pepperoni.jpg" alt="Pepperoni" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Pepperoni & Pizza Toppings</h3>
@@ -1290,7 +1349,7 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="images/cured-meats.jpg" alt="Cured Meats">
+                        <img src="images/cured-meats.jpg" alt="Cured Meats" width="600" height="400" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>Cured & Smoked</h3>
@@ -1448,11 +1507,17 @@
             </div>
             
             <div class="footer-section">
-                <h4>Contact</h4>
+                <h4>Contact & Social</h4>
                 <p>WhatsApp: +977 9808261761</p>
                 <p>Kathmandu, Nepal</p>
-                <p>Mon-Sat: 7AM - 8PM</p>
-                <p>Sun: 8AM - 6PM</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/houseofsausagex/?hl=en" target="_blank" class="social-icon instagram" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@houseofsausagex" target="_blank" class="social-icon tiktok" aria-label="TikTok">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v6.16c0 2.52-1.12 4.84-2.9 6.24-1.72 1.36-4.04 1.94-6.21 1.56-2.26-.39-4.26-1.82-5.33-3.86-1.13-2.15-.96-4.84.44-6.85 1.35-1.94 3.65-3.08 5.98-2.96v4.03c-1.15-.09-2.31.38-3.03 1.27-.75.92-.9 2.21-.39 3.27.52 1.08 1.63 1.79 2.84 1.83 1.26.04 2.48-.55 3.21-1.58.47-.66.72-1.45.72-2.26V.02z"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
         
@@ -1487,4 +1552,4 @@
         });
     </script>
 </body>
-</html>'''
+</html>
